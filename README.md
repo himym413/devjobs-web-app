@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub](https://github.com/himym413/webjobs-dev-app)
-- Live Site URL: [Vercel](https://himym-webjobs-dev-app.vercel.app/)
+- Live Site URL: [Vercel](https://himym-devjobs-web-app.vercel.app/)
 
 ## My process
 
