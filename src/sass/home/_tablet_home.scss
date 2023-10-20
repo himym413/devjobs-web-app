@@ -1,0 +1,56 @@
+@use "../variables";
+
+@media screen and (min-width: variables.$breakpoint-tablet-min) {
+  header {
+    background-image: url("../assets/tablet/bg-pattern-header.svg");
+
+    .filter_box {
+      top: 75%;
+
+      &_by-title {
+        gap: 1rem;
+
+        img {
+          display: inline-block;
+        }
+      }
+
+      &_by-location {
+        display: flex;
+        position: relative;
+        gap: 1rem;
+      }
+
+      &_by-hours {
+        position: relative;
+        display: flex;
+        gap: 1rem;
+
+        input[type="checkbox"] {
+          position: relative;
+          visibility: hidden;
+        }
+
+        p {
+          color: variables.$primary-800;
+        }
+
+        .button_search-desktop {
+          width: 5rem;
+          height: 3rem;
+          font-weight: variables.$font-weight-600;
+        }
+      }
+
+      &_mobile {
+        display: none;
+      }
+    }
+  }
+
+  main {
+    .main_container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

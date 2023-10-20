@@ -1,0 +1,205 @@
+@use "./variables";
+
+// Setting up font sizes and line heights
+body {
+  font-family: variables.$font-family;
+  font-weight: variables.$font-weight-400;
+  line-height: 1.625;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 1.75rem;
+  line-height: 2.125;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.8125;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+h4 {
+  font-size: 0.875rem;
+  line-height: 1.125;
+}
+
+@media screen and (max-width: variables.$breakpoint-mobile-max) {
+  h1,
+  h2 {
+    font-size: 1.25rem;
+  }
+}
+
+// Utillity classes
+.hidden {
+  display: none !important;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.error_text {
+  color: red;
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1.25rem;
+  padding-inline: 1.5rem;
+}
+
+.text-700 {
+  font-weight: variables.$font-weight-700;
+}
+
+.header_padding-container {
+  padding: 2.25rem 1.5rem 4.25rem 1.5rem;
+}
+
+.filter_box_padding-container {
+  padding: 1rem 1rem 1rem 1.5rem;
+}
+
+.main_padding-container {
+  padding-inline: 1.5rem;
+}
+
+.job_padding-container {
+  padding: 3rem 0.5rem 2rem 2rem;
+}
+
+.modal_filter_padding-container {
+  padding: 1.5rem;
+}
+
+.company_card_padding-container {
+  padding: 3rem 2rem 2rem 2rem;
+}
+
+.about_padding-container {
+  padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+}
+
+.footer_padding-container {
+  padding: 1.5rem;
+}
+
+input {
+  color: variables.$primary-700;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  display: inline-block;
+  border: none;
+}
+
+.button_primary {
+  border-radius: 0.3125rem;
+  color: variables.$secondary-100;
+  background-color: variables.$primary-300;
+}
+
+.button_secondary {
+  border-radius: 0.3125rem;
+  color: variables.$primary-300;
+  background-color: rgba(147, 155, 244, 0.25);
+}
+
+.divider_line_before {
+  &::before {
+    content: "";
+    position: absolute;
+    left: -1.5rem;
+    width: 1px;
+    height: 5rem;
+    background-color: variables.$secondary-500;
+  }
+}
+
+// Company logo and background colors
+.company_logo {
+  position: absolute;
+  top: -1.5rem;
+  border-radius: 0.9375rem;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 50px;
+  height: 50px;
+
+  &-scoot {
+    background-color: #e99210;
+    background-image: url("../assets/logos/scoot.svg");
+  }
+
+  &-blogr {
+    background-color: #e54d25;
+    background-image: url("../assets/logos/blogr.svg");
+  }
+
+  &-vector {
+    background-color: #34353f;
+    background-image: url("../assets/logos/vector.svg");
+  }
+
+  &-officelite {
+    background-color: #2f4fc7;
+    background-image: url("../assets/logos/officelite.svg");
+  }
+
+  &-pod {
+    background-color: #132034;
+    background-image: url("../assets/logos/pod.svg");
+  }
+
+  &-creative {
+    background-color: #4e1853;
+    background-image: url("../assets/logos/creative.svg");
+  }
+
+  &-pomodoro {
+    background-color: #4722c6;
+    background-image: url("../assets/logos/pomodoro.svg");
+  }
+
+  &-maker {
+    background-color: #21427d;
+    background-image: url("../assets/logos/maker.svg");
+  }
+
+  &-coffeeroasters {
+    background-color: #f2decb;
+    background-image: url("../assets/logos/coffeeroasters.svg");
+  }
+
+  &-mastercraft {
+    background-color: #1f1f1f;
+    background-image: url("../assets/logos/mastercraft.svg");
+  }
+
+  &-crowdfund {
+    background-color: #37c790;
+    background-image: url("../assets/logos/crowdfund.svg");
+  }
+
+  &-typemaster {
+    background-color: #f16718;
+    background-image: url("../assets/logos/typemaster.svg");
+  }
+}
+
+@media screen and (min-width: variables.$breakpoint-tablet-min) {
+  .header_padding-container {
+    padding-bottom: 5.5rem;
+  }
+}

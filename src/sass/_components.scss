@@ -1,0 +1,163 @@
+@use "./variables";
+
+// Header, theme switching
+// Toggle switch
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.5rem;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: variables.$secondary-100;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 0.875rem;
+  width: 0.875rem;
+  left: 5px;
+  bottom: 5px;
+  background-color: variables.$primary-300;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider.slider-move::before {
+  -webkit-transform: translateX(1.5rem);
+  -ms-transform: translateX(1.5rem);
+  transform: translateX(1.5rem);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+// Custom checkbox
+.checkbox_hours {
+  visibility: hidden;
+}
+
+.custom_checkbox_hours {
+  cursor: pointer;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.1875rem;
+  background-color: variables.$secondary-500;
+  opacity: 0.5;
+
+  &:hover,
+  &:focus-visible {
+    background-color: variables.$primary-300;
+  }
+}
+
+// Hours
+input[value="Full Time"] + .custom_checkbox_hours {
+  background-image: url("../assets/desktop/icon-check.svg") !important;
+  background-size: 80%;
+  background-position: 3 4;
+  background-repeat: no-repeat;
+  background-color: variables.$primary-300;
+  opacity: 1;
+}
+
+// Job Card
+.job_card {
+  position: relative;
+  background-color: variables.$secondary-100;
+  border-radius: 0.375rem;
+}
+
+// Overlay and modal
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-color: variables.$primary-800;
+  opacity: 0.5;
+  z-index: 100;
+}
+
+.modal_filter {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 3rem);
+  background-color: variables.$secondary-100;
+  border-radius: 0.375rem;
+  z-index: 1000;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3rem;
+
+  &_top {
+    gap: 1rem;
+
+    input {
+      cursor: pointer;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 4.5rem;
+      left: 0;
+      right: 0;
+      background-color: variables.$secondary-500;
+      width: 100%;
+      height: 1px;
+    }
+  }
+
+  &_bottom {
+    width: 100%;
+    .modal_filter_bottom_checkbox-container {
+      position: relative;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+
+      .checkbox_hours_container {
+        .checkbox_hours {
+          margin-top: 1.5rem;
+        }
+      }
+    }
+
+    .button_search-modal {
+      width: 100%;
+      height: 3rem;
+    }
+  }
+}
+
+@media screen and (min-width: variables.$breakpoint-tablet-min) {
+  .overlay,
+  .modal_filter {
+    display: none;
+  }
+}

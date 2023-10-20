@@ -1,0 +1,14 @@
+@use "../variables";
+
+@media screen and (min-width: variables.$breakpoint-desktop-min) {
+  header {
+    background-image: url("../assets/desktop/bg-pattern-header.svg");
+  }
+
+  main {
+    .main_container {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 1.5rem;
+    }
+  }
+}

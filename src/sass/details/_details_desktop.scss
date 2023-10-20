@@ -1,0 +1,9 @@
+@use "../variables";
+
+@media screen and (min-width: variables.$breakpoint-desktop-min) {
+  body[data-page="details_page"] {
+    main {
+      margin-top: -9rem;
+    }
+  }
+}

@@ -1,0 +1,144 @@
+@use "../variables";
+
+body {
+  background-color: variables.$secondary-200;
+}
+
+header {
+  position: relative;
+  color: variables.$secondary-100;
+  background-image: url("../assets/mobile/bg-pattern-header.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-bottom: 6rem;
+
+  .header_container {
+    max-width: 1110px;
+    justify-content: space-between;
+    margin-inline: auto;
+
+    .theme-switch_container {
+      gap: 1rem;
+    }
+  }
+
+  .filter_box {
+    position: absolute;
+    top: 70%;
+    left: 1.5rem;
+    right: 1.5rem;
+    max-width: calc(1110px - 2rem);
+    height: 5rem;
+    margin-inline: auto;
+    border-radius: 0.375rem;
+    color: variables.$secondary-700;
+    background-color: variables.$secondary-100;
+    justify-content: space-between;
+
+    &_by-title {
+      img {
+        display: none;
+      }
+
+      input {
+        cursor: pointer;
+        max-width: 10rem;
+        caret-color: variables.$primary-300;
+        padding-top: 1.7rem;
+        padding-bottom: 1.7rem;
+      }
+    }
+
+    &_by-location,
+    &_by-hours {
+      display: none;
+
+      input {
+        cursor: pointer;
+        caret-color: variables.$primary-300;
+        padding-top: 1.7rem;
+        padding-bottom: 1.7rem;
+      }
+    }
+
+    &_mobile {
+      gap: 1rem;
+
+      .button_filter {
+        background-color: transparent;
+      }
+
+      .button_search-mobile {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+}
+
+main {
+  max-width: 1110px;
+  margin-inline: auto;
+  padding-bottom: 3.875rem;
+
+  .main_container {
+    display: grid;
+    row-gap: 3rem;
+    column-gap: 1rem;
+    margin-bottom: 2rem;
+
+    .job_card {
+      .job_card_about {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.5rem;
+
+        .top_part {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+
+          .time_and_hours {
+            gap: 2rem;
+            color: variables.$secondary-700;
+
+            .hours {
+              position: relative;
+
+              &::before {
+                content: "";
+                position: absolute;
+                top: 40%;
+                left: -1rem;
+                width: 0.25rem;
+                height: 0.25rem;
+                border-radius: 50%;
+                background-color: variables.$secondary-700;
+              }
+            }
+          }
+
+          .title {
+            color: variables.$primary-700;
+          }
+
+          .company {
+            color: variables.$secondary-700;
+          }
+        }
+
+        .location {
+          color: variables.$primary-300;
+        }
+      }
+    }
+  }
+
+  .button_load-more {
+    display: block;
+    margin-inline: auto;
+    height: 3rem;
+    width: 8rem;
+    font-weight: variables.$font-weight-600;
+  }
+}

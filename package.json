@@ -1,0 +1,20 @@
+{
+  "name": "dev-jobs-app",
+  "version": "1.0.0",
+  "description": "Web application that displays available dev jobs",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Igor Šešlak",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0"
+  },
+  "dependencies": {
+    "core-js": "^3.32.2",
+    "regenerator-runtime": "^0.14.0"
+  }
+}

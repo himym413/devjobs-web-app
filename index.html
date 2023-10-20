@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev Jobs App</title>
+    <link rel="icon" href="./src/assets/favicon-32x32.png" />
+    <link rel="stylesheet" href="./src/sass/main.scss" />
+    <script defer src="./src/js/darkMode.js"></script>
+    <script type="module" src="./src/js/controller.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="header_padding-container flex | header_container">
+        <img src="./src/assets/desktop/logo.svg" alt="Logo" />
+        <div class="flex | theme-switch_container">
+          <img
+            src="./src/assets/desktop/icon-sun.svg"
+            alt="Sun icon that shows if light theme is used."
+          />
+          <label class="switch">
+            <input type="checkbox" aria-label="toggle dark mode" />
+            <span class="slider round"></span>
+          </label>
+          <img
+            src="./src/assets/desktop/icon-moon.svg"
+            alt="Moon icon that shows if dark theme is used."
+          />
+        </div>
+      </div>
+
+      <form
+        class="filter_box_padding-container flex hidden | filter_box"
+        id="filterForm"
+        onsubmit="return false"
+      >
+        <div class="flex | filter_box_by-title">
+          <img src="./src/assets/desktop/icon-search.svg" alt="Search icon" />
+          <input
+            type="text"
+            name="filterTitle"
+            id="filterTitle"
+            placeholder="Filter by title..."
+          />
+        </div>
+        <div class="flex divider_line_before | filter_box_by-location">
+          <img
+            src="./src/assets/desktop/icon-location.svg"
+            alt="Location icon"
+          />
+          <input
+            type="text"
+            name="filterLocation"
+            id="filterLocation"
+            placeholder="Filter by location..."
+          />
+        </div>
+        <div class="flex divider_line_before | filter_box_by-hours">
+          <label for="filterHours" class="checkbox_hours_container">
+            <input
+              type="checkbox"
+              name="filterHours"
+              id="filterHours"
+              class="checkbox_hours"
+              value="All"
+            />
+            <span class="custom_checkbox_hours"></span>
+          </label>
+          <p class="text-700">Full time</p>
+          <button
+            type="submit"
+            form="filterForm"
+            value="submit"
+            class="button_primary button_search-desktop | button-filter"
+          >
+            Search
+          </button>
+        </div>
+        <div class="flex | filter_box_mobile">
+          <button class="button_filter">
+            <img src="./src/assets/mobile/icon-filter.svg" alt="Filter icon" />
+          </button>
+          <button
+            type="submit"
+            form="filterForm"
+            value="submit"
+            class="button_primary button_search-mobile | button-filter"
+          >
+            <svg
+              width="24"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 -6 24 30"
+            >
+              <path
+                d="M17.112 15.059h-1.088l-.377-.377a8.814 8.814 0 002.15-5.784A8.898 8.898 0 008.898 0 8.898 8.898 0 000 8.898a8.898 8.898 0 008.898 8.899c2.211 0 4.23-.808 5.784-2.143l.377.377v1.081l6.845 6.832 2.04-2.04-6.832-6.845zm-8.214 0A6.16 6.16 0 118.9 2.737a6.16 6.16 0 010 12.322z"
+                fill="#fff"
+                fill-rule="nonzero"
+              />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </header>
+
+    <main>
+      <div class="main_padding-container | main_container">
+        <!-- <div class="job_padding-container | job_card">
+          <img
+            src="./src/assets/logos/scoot.svg"
+            alt="Company logo"
+            class="company_logo company_logo-scoot"
+          />
+          <div class="flex | job_card_about">
+            <div class="flex | top_part">
+              <div class="flex | time_and_hours">
+                <p class="time">5h ago</p>
+                <p class="hours">Full time</p>
+              </div>
+              <a href="#" class="title"><h3>Senior Software Engineer</h3></a>
+              <p class="company">Scoot</p>
+            </div>
+            <h4 class="location">United Kingdom</h4>
+          </div>
+        </div> -->
+
+        <!-- Details page -->
+        <!-- <div class="flex company_card_padding-container | company_card">
+          <div>
+            <img
+              src="./src/assets/logos/scoot.svg"
+              alt="Company logo"
+              class="company_logo company_logo-scoot"
+            />
+            <div class="flex">
+              <h2 class="company_name">Scoot</h2>
+              <p class="company_url">scoot.com</p>
+            </div>
+          </div>
+          <a href="#" class="button_secondary | button_company-site"
+            >Company Site</a
+          >
+        </div> -->
+
+        <!-- <div class="about_padding-container | about_section">
+          <div class="flex | about_section_top">
+            <div>
+              <div class="flex | about_section_top_time-and-hours">
+                <p class="about_section_top-time">1w ago</p>
+                <p class="about_section_top-hours">Part Time</p>
+              </div>
+              <h1 class="about_section_top-title">Senior Software Engineer</h1>
+              <h4 class="about_section_top-location">United Kingdom</h4>
+            </div>
+            <a href="#" class="button_primary | button_apply">Apply Now</a>
+          </div>
+
+          <p class="about_section_description">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus
+            hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque,
+            aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula
+            sollicitudin laoreet viverra, tortor libero sodales leo, eget
+            blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse
+            potenti. Sed egestas, ante et vulputate volutpat, eros pede semper
+            est, vitae luctus metus libero eu augue. Morbi purus libero,
+            faucibus adipiscing, commodo quis, gravida id, est. Sed lectus.
+            Praesent elementum hendrerit tortor. Sed semper lorem at felis.
+            Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod
+            dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu,
+            dapibus eu, fermentum et, dapibus sed, urna.
+          </p>
+
+          <h3 class="about_section_requirements-title">Requirements</h3>
+          <p class="about_section_requirements">
+            Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna
+            a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis
+            libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing
+            varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna.
+            Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget,
+            gravida vitae, ultricies ac, leo. Integer leo pede, ornare a,
+            lacinia eu, vulputate vel, nisl.
+          </p>
+          <ul class="about_section_requirements-list">
+            <li class="about_section_requirements-list-item">
+              Morbi interdum mollis sapien. Sed
+            </li>
+            <li class="about_section_requirements-list-item">
+              Phasellus lacinia magna a ullamcorper laoreet, lectus arcu
+              pulvinar risus
+            </li>
+            <li class="about_section_requirements-list-item">
+              Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel,
+              tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus.
+            </li>
+            <li class="about_section_requirements-list-item">
+              Morbi interdum mollis sapien. Sed
+            </li>
+          </ul>
+
+          <h3 class="about_section_tasks-title">What You Will Do</h3>
+          <p class="about_section_tasks">
+            Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae
+            luctus metus libero eu augue. Morbi purus libero, faucibus
+            adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent
+            elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum
+            volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu
+            pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu,
+            fermentum et, dapibus sed, urna.
+          </p>
+          <ul class="about_section_tasks-list">
+            <li class="about_section_tasks-list-item">
+              Morbi interdum mollis sapien. Sed
+            </li>
+            <li class="about_section_tasks-list-item">
+              Phasellus lacinia magna a ullamcorper laoreet, lectus arcu
+              pulvinar risus
+            </li>
+            <li class="about_section_tasks-list-item">
+              Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel,
+              tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus.
+            </li>
+            <li class="about_section_tasks-list-item">
+              Morbi interdum mollis sapien. Sed
+            </li>
+          </ul>
+        </div> -->
+      </div>
+
+      <!-- <button class="button_primary | button_load-more">Load More</button> -->
+    </main>
+
+    <!-- <footer>
+      <div class="flex footer_padding-container | footer_container">
+        <div class="footer_left">
+          <h3>Senior Software Engineer</h3>
+          <p>So Digital Inc.</p>
+        </div>
+        <button class="button_primary | button_apply-footer">Apply Now</button>
+      </div>
+    </footer> -->
+
+    <div class="overlay hidden"></div>
+    <div class="flex modal_filter_padding-container | modal_filter hidden">
+      <div class="flex | modal_filter_top">
+        <img src="./src/assets/desktop/icon-location.svg" alt="Location icon" />
+        <input
+          type="text"
+          name="filterLocation"
+          id="filterLocation"
+          placeholder="Filter by location..."
+        />
+      </div>
+
+      <div class="modal_filter_bottom">
+        <div class="flex | modal_filter_bottom_checkbox-container">
+          <label for="filterHours" class="checkbox_hours_container">
+            <input
+              type="checkbox"
+              name="filterHours"
+              id="filterHours"
+              class="checkbox_hours"
+              value="All"
+            />
+            <span class="custom_checkbox_hours"></span>
+          </label>
+          <p class="text-700">Full Time Only</p>
+        </div>
+        <button
+          type="submit"
+          form="filterForm"
+          value="submit"
+          class="button_primary button_search-modal | button-filter"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

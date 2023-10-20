@@ -1,0 +1,70 @@
+@use "../variables";
+
+@media screen and (min-width: variables.$breakpoint-tablet-min) {
+  body[data-page="details_page"] {
+    main {
+      margin-top: -8rem;
+
+      .main_container {
+        display: block;
+
+        .company_card {
+          flex-direction: row;
+          justify-content: space-between;
+          padding-top: 0;
+          padding-bottom: 0;
+          margin-bottom: 2rem;
+
+          div {
+            display: flex;
+            align-items: center;
+
+            .company_logo {
+              position: relative;
+              left: 2.25rem;
+              top: 0;
+              padding-inline: 3.125rem;
+              padding-block: 4rem;
+              border-radius: 0;
+            }
+
+            div {
+              align-items: flex-start;
+              gap: 0;
+            }
+          }
+        }
+
+        .about_section {
+          padding: 3rem;
+          margin-top: 0;
+
+          &_top {
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 2.5rem;
+
+            .button_apply {
+              width: 9rem;
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      .footer_container {
+        justify-content: space-between;
+        padding-inline: 2.5rem;
+
+        .footer_left {
+          display: block;
+        }
+
+        .button_apply-footer {
+          width: 9rem;
+        }
+      }
+    }
+  }
+}

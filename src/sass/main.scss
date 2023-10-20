@@ -1,0 +1,12 @@
+@use "./reset";
+@use "./variables";
+@use "./utillities";
+@use "./components";
+@use "./dark_theme";
+@use "./home/mobile_home";
+@use "./home/tablet_home";
+@use "./home/desktop_home";
+@use "./home/hover_states_home";
+@use "./details/details_mobile";
+@use "./details/details_tablet";
+@use "./details/details_desktop";

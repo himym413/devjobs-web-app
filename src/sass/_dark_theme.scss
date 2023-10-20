@@ -1,0 +1,105 @@
+@use "./variables";
+
+// @media (prefers-color-scheme: dark) {
+.dark_theme {
+  background-color: variables.$primary-800 !important;
+
+  header {
+    .filter_box {
+      background-color: variables.$primary-700;
+      input {
+        color: white;
+        background-color: variables.$primary-700;
+      }
+
+      &_by-hours {
+        p {
+          color: variables.$secondary-100;
+        }
+      }
+
+      .button_filter {
+        img {
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+  }
+
+  main {
+    .main_container {
+      .job_card {
+        background-color: variables.$primary-700;
+
+        &_about {
+          .title {
+            color: variables.$secondary-100 !important;
+          }
+        }
+      }
+
+      .company_card {
+        background-color: variables.$primary-700 !important;
+
+        .company_name {
+          color: variables.$secondary-200 !important;
+        }
+
+        .button_company-site {
+          color: variables.$secondary-200 !important;
+          background-color: rgba(89, 100, 224, 0.2);
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+          }
+        }
+      }
+
+      .about_section {
+        background-color: variables.$primary-700 !important;
+
+        &_top-title,
+        &_requirements-title,
+        &_tasks-title {
+          color: variables.$secondary-200 !important;
+        }
+      }
+    }
+
+    .error_text {
+      color: variables.$secondary-100;
+    }
+  }
+
+  footer {
+    background-color: variables.$primary-700 !important;
+
+    h3 {
+      color: variables.$secondary-100;
+    }
+  }
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 1);
+  }
+
+  .modal_filter {
+    background-color: variables.$primary-700;
+
+    input {
+      color: variables.$secondary-100;
+      background-color: variables.$primary-700;
+    }
+
+    &_bottom {
+      p {
+        color: variables.$secondary-100;
+      }
+    }
+
+    .button_search-modal {
+      font-weight: variables.$font-weight-600;
+    }
+  }
+}
+// }
